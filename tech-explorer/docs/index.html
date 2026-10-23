@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech Explorer — Descubra seu futuro na tecnologia</title>
+<meta name="description" content="Explore as áreas da TI, compare carreiras, faça um quiz exploratório e veja como começar na tecnologia.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="topo">
+<a class="skip" href="#areas">Ir para o conteúdo</a>
+<header class="bar">
+  <a class="logo" href="#topo">&lt;tech<b>explorer</b>/&gt;</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Principal">
+    <a href="#universo">Universo TI</a><a href="#areas">Áreas</a><a href="#comparador">Comparador</a>
+    <a href="#quiz">Quiz</a><a href="#salarios">Salários</a><a href="#vagas">Vagas</a>
+    <a href="#comecar">Começar</a><a href="#glossario">Glossário</a><a href="#fontes">Fontes</a>
+  </nav>
+</header>
+<main>
+<section class="hero">
+  <div>
+    <h1>Descubra seu futuro na tecnologia.</h1>
+    <p class="lead">Explore as áreas da TI, conheça as profissões, compare salários e descubra o caminho ideal para começar sua carreira.</p>
+    <p><a class="btn primary" href="#areas">Explorar áreas</a> <a class="btn" href="#quiz">Descobrir minha carreira</a></p>
+  </div>
+  <pre class="code" aria-hidden="true">const carreira = {
+  area: "?",
+  fundamentos: ["lógica", "inglês", "prática"],
+  proximoPasso() {
+    return explorar(areas);
+  }
+};</pre>
+</section>
+
+<section id="universo">
+  <h2>O universo da TI</h2>
+  <p>Tecnologia da Informação é o conjunto de pessoas, ferramentas e métodos que criam, armazenam, protegem e transmitem informação. Está no app do banco, no streaming, no sistema do hospital, nos jogos e nas redes que mantêm tudo isso no ar.</p>
+  <div class="grid3">
+    <article class="card"><h3>TI</h3><p>Termo amplo: desenvolvimento, infraestrutura, dados, segurança e suporte.</p></article>
+    <article class="card"><h3>Ciência da Computação</h3><p>Base teórica: algoritmos, estruturas de dados, sistemas e matemática da computação.</p></article>
+    <article class="card"><h3>Engenharia de Software</h3><p>Como planejar, construir, testar e manter software com qualidade ao longo do tempo.</p></article>
+    <article class="card"><h3>Sistemas de Informação</h3><p>Tecnologia aplicada a processos e decisões de negócio nas organizações.</p></article>
+  </div>
+</section>
+
+<section id="areas">
+  <h2>Explore as áreas de atuação</h2>
+  <p>Nem toda área exige programação na mesma intensidade. Use os filtros e abra cada card para ver detalhes.</p>
+  <div class="filters">
+    <label>Categoria <select id="f-cat"><option value="">Todas</option></select></label>
+    <label>Nível de programação <select id="f-prog"><option value="">Todos</option><option>Nenhum</option><option>Baixo</option><option>Médio</option><option>Alto</option></select></label>
+    <label>Perfil <select id="f-perfil"><option value="">Todos</option></select></label>
+  </div>
+  <p id="areas-status" role="status" class="muted"></p>
+  <div id="areas-grid" class="grid3"></div>
+</section>
+
+<section id="comparador">
+  <h2>Comparador de carreiras</h2>
+  <p>Marque “Comparar” em duas ou mais áreas nos cards acima. Não existe área melhor para todo mundo: o objetivo é mostrar diferenças.</p>
+  <p><button class="btn" id="cmp-clear">Limpar seleção</button></p>
+  <div id="cmp-out" class="scroll" role="region" aria-live="polite" aria-label="Resultado da comparação"></div>
+</section>
+
+<section id="quiz">
+  <h2>Descubra seu perfil profissional</h2>
+  <p class="muted">Orientação exploratória, não é teste psicológico nem avaliação profissional definitiva.</p>
+  <div id="quiz-box" class="card"></div>
+</section>
+
+<section id="salarios">
+  <h2>Salários na área de TI</h2>
+  <div class="card notice">
+    <h3>Dados salariais ainda não incluídos</h3>
+    <p>Para não publicar números sem fonte, esta versão não exibe valores. Salários variam por região, empresa, experiência, especialidade e contratação (CLT, PJ), e bruto, líquido e faturamento PJ não são equivalentes. Consulte levantamentos atuais e anote fonte e data antes de montar gráficos:</p>
+    <ul class="links">
+      <li><a href="https://www.roberthalf.com/br/pt/insights/guia-salarial" target="_blank" rel="noopener">Guia Salarial Robert Half</a></li>
+      <li><a href="https://www.glassdoor.com.br/Sal%C3%A1rios/index.htm" target="_blank" rel="noopener">Glassdoor Salários</a></li>
+      <li><a href="https://www.catho.com.br/profissoes/" target="_blank" rel="noopener">Catho Profissões</a></li>
+    </ul>
+    <p class="muted">Se algum link mudar, busque o nome da fonte. A estrutura do gráfico está pronta para receber dados documentados (campos: cargo, nível, faixa, tipo, fonte, data).</p>
+  </div>
+</section>
+
+<section id="vagas">
+  <h2>Mercado e oportunidades</h2>
+  <p>Há caminhos como estágio, trainee, vagas júnior, remoto, híbrido, presencial e freelance. Portfólio, comunidades, inglês e prática contam muito. Os links abaixo abrem <b>pesquisas externas</b>; a disponibilidade de vagas depende de cada plataforma.</p>
+  <div class="filters"><label>Cargo <select id="v-cargo"></select></label>
+  <label>Nível <select id="v-nivel"><option>estágio</option><option>júnior</option><option>pleno</option><option>sênior</option></select></label></div>
+  <ul class="links" id="v-links"></ul>
+</section>
+
+<section id="comecar">
+  <h2>Como começar do zero</h2>
+  <ol class="steps">
+    <li><b>Conheça as áreas.</b> Use esta página e o quiz.</li>
+    <li><b>Escolha uma para explorar.</b> Você pode trocar depois.</li>
+    <li><b>Aprenda os fundamentos.</b> Lógica, inglês técnico e a base da área.</li>
+    <li><b>Pratique em pequenos projetos.</b></li>
+    <li><b>Monte um portfólio</b> no GitHub.</li>
+    <li><b>Melhore o currículo.</b></li>
+    <li><b>Prepare-se para entrevistas.</b></li>
+    <li><b>Busque estágio ou a primeira oportunidade.</b> Não há prazo garantido.</li>
+  </ol>
+  <h3>Trilhas e recursos gratuitos</h3>
+  <ul class="links">
+    <li>Web: HTML, CSS, JavaScript, Git e GitHub — <a href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development" target="_blank" rel="noopener">MDN Learn</a>, <a href="https://www.freecodecamp.org/portuguese/" target="_blank" rel="noopener">freeCodeCamp</a>, <a href="https://git-scm.com/book/pt-br/v2" target="_blank" rel="noopener">Pro Git</a></li>
+    <li>Fundamentos de computação — <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener">CS50 (Harvard)</a></li>
+    <li>Dados: planilhas, SQL, visualização e Python — <a href="https://www.kaggle.com/learn" target="_blank" rel="noopener">Kaggle Learn</a></li>
+    <li>Nuvem e certificações introdutórias — <a href="https://learn.microsoft.com/pt-br/training/" target="_blank" rel="noopener">Microsoft Learn</a></li>
+  </ul>
+</section>
+
+<section id="glossario">
+  <h2>Glossário</h2>
+  <label for="g-q">Buscar termo</label>
+  <input id="g-q" type="search" placeholder="Ex.: API">
+  <dl id="g-list"></dl>
+  <p id="g-empty" class="muted" hidden>Nenhum termo encontrado. Tente outra palavra.</p>
+</section>
+
+<section id="fontes">
+  <h2>Sobre o projeto e fontes</h2>
+  <p>Projeto educativo para quem quer conhecer a TI. Os textos sobre áreas são resumos introdutórios e devem ser complementados com pesquisa. Remunerações e oportunidades variam conforme região, empresa, experiência, especialidade e modalidade de contratação.</p>
+  <p class="muted">Fontes de estudo: MDN, freeCodeCamp, Pro Git, CS50, Kaggle, Microsoft Learn (links na seção Como começar). Plataformas de vagas: LinkedIn, Gupy, Indeed.</p>
+</section>
+</main>
+<footer><a href="#topo">Voltar ao início</a></footer>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
